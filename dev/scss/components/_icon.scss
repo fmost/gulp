@@ -1,0 +1,116 @@
+//icons
+.icon{
+    @extend %dis-inb;
+    overflow: hidden;
+    // @include sprites(iconMaps);
+}
+.i{    
+    &-medal{
+        $size:35px;
+        width: $size;
+        height: $size;
+        background:url(#{$img}medal-icon.png#{$version}) no-repeat;
+        &-bbs{
+            @for $num from 1 to 7{
+                &-#{$num}{
+                    background-position: ($num - 1) * (-35px) 0;
+                }
+            }
+        }
+        &-sx{
+            @for $num from 1 to 13{
+                &-#{$num}{
+                    background-position:($num - 1) * (-35px) -35px;
+                }
+            }
+        }
+        &-xz{
+            @for $num from 1 to 13{
+                &-#{$num}{
+                    background-position: ($num - 1) * (-35px) -35px * 2;
+                }
+            }
+        }
+        &-g{
+            @for $num from 1 to 17{
+                &-#{$num}{
+                    background: url(#{$img}medal-icon-g/i-medal-g-#{$num}.gif#{$version}) no-repeat;
+                }
+            }
+        }
+        // 勋章大图
+        &L{
+            $size:87px;
+            width: $size;
+            height: $size;
+            background:url(#{$img}medal-icon-large.png#{$version}) no-repeat;
+            &-xz{
+                &-1{
+                    background-position:0 0;
+                }
+                &-2{
+                    background-position:-87px 0;
+                }
+                &-5{
+                    background-position:-87px * 2 0;
+                }                
+            }
+            &-sx{
+                &-2{
+                    background-position:0 -87px;
+                }
+                &-5{
+                    background-position:-87px -87px;
+                }
+                &-9{
+                    background-position:-87px * 2  -87px;
+                }
+            }
+            &-g{
+                &-2{
+                    background-position:0  -87px * 2;
+                }
+                &-6{
+                    background-position:-87px -87px * 2;
+                }
+                &-13{
+                    background-position:-87px * 2 -87px * 2;
+                }
+                &-16{
+                    background-position:-87px * 3 -87px * 2;
+                }
+            }
+        }
+    }
+    &-daoju{
+        $size:90px;
+        width: $size;
+        height: $size;
+        background: url(#{$img}icon-daoju.png) no-repeat;
+        &-2{
+            @extend .i-daoju;
+            background-position: 0 0;
+        }
+        &-3{
+            @extend .i-daoju;
+            background-position: -90px 0;
+        }
+    }
+    &-selected{
+        $size:32px;
+        width: $size;
+        height: $size;
+        background:url(#{$img}spr-24.png) no-repeat;
+        _background-image: url(#{$img}spr-24-ie6.png);
+        background-position: -52px 0;
+        position: absolute;
+        right:-10px;
+        bottom:-10px;
+    }
+    &-notice{
+        $size:16px;
+        width: $size;
+        height: $size;
+        background: url(#{$img}icon-notice.png) no-repeat;
+    }
+}

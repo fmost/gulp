@@ -1,0 +1,138 @@
+.wrapper{
+    min-width: $base-width;
+}
+.inner{
+    width: $base-width;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//font
+.c{
+    &-red{
+        color: $c-red;
+    }    
+    &-orange{
+        color: $c-orange;
+    }
+    &-blue{
+        color: $c-blue;
+    }
+    &-gray{
+        color: $c-gray;
+    }
+    &-gray-dark{
+        color: $c-gray-dark;
+    }
+    &-hover{
+        color: $c-hover;
+    }
+    &-bold{
+        font-weight: bold;
+    }
+    &-line{
+        text-decoration: underline;        
+    }
+}
+.tcenter{
+    text-align: center;
+}
+
+// float
+.fl{
+    @extend %fl;
+}
+.fr{
+    @extend %fr;
+}
+
+//margin
+$marginMap: (
+    t :10,
+    b :10,
+    l :10
+);
+.m {
+    @each $group in $marginMap {
+        $name: nth($group, 1);
+        $valueArray: nth($group, 2);
+        $point: null;
+        @if $name == 't' {
+            $point: '-top';
+        }
+        @if $name == 'b' {
+            $point: '-bottom';
+        }
+        @if $name == 'l' {
+            $point: '-left';
+        }
+        @if $name == 'r' {
+            $point: '-right';
+        }
+        @if ($name == 'tb' or $name == 'lr') {
+            $point: '';
+        }
+        &#{$name}{
+            @for $property from 1 through length($valueArray) {
+                $value: nth($valueArray, $property);
+                $valueString: unquote($value + 'px');
+                @if $name == 'tb' {
+                    $valueString: $valueString 0;
+                }
+                @if $name == 'lr' {
+                    $valueString: 0 $valueString;
+                }
+                &#{$value}{
+                    margin#{$point}:$valueString;
+                }
+            }
+        }
+    }
+}
+// padding
+$paddingMap: (
+    t:10,
+    b:10,
+    l:10
+);
+.p{
+    @each $group in $paddingMap{
+        $name: nth($group, 1);
+        $valueArray: nth($group, 2);
+        $point: null;
+        @if $name == 't'{
+          $point: '-top';
+        }
+        @if $name == 'b'{
+          $point: '-bottom';
+        }
+        @if $name == 'l'{
+          $point: '-left';
+        }
+        @if $name == 'r'{
+          $point: '-right';
+        }
+        @if ($name == 'tb' or $name == 'lr' or $name == 'd') {
+          $point: '';
+        }
+        @if $name == 'd'{
+          $name : 'd';
+        }
+        &#{$name}{
+          @for $property from 1 through length($valueArray){
+            $value: nth($valueArray, $property);
+            $valueString: unquote($value + 'px');
+            @if $name == 'tb'{
+              $valueString: $valueString 0;
+            }
+            @if $name == 'lr'{
+              $valueString: 0 $valueString;
+            }
+
+            &#{$value}{
+              padding#{$point}: $valueString;
+            }
+          }
+        }
+    }
+}

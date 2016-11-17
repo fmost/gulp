@@ -1,0 +1,27 @@
+.ui-marquee{
+    position: relative;
+    $height:30px;
+    height: $height;
+    overflow: hidden;
+    &-icon{       
+        $icon-size:16px;
+        padding-left: $icon-size;
+        .icon{
+            position:absolute;
+            left: 0;
+            top:50%;
+            margin-top: -($icon-size)/2;
+        }
+    }
+    .ui-text-list{
+        position:absolute;
+        width: 100%;                
+        li{
+            width: 90%;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            word-break:keep-all; 
+        }
+    }
+}

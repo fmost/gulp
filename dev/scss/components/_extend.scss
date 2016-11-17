@@ -1,0 +1,33 @@
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+    }
+    &:after {
+        height:0;
+        visibility:hidden;
+        font-size:0;
+        line-height:0;
+        clear:both;
+    }
+}
+%dis-inb {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+%fl {
+    float: left;
+    _display: inline;
+}
+%fr {
+    float: right;
+    _display: inline;
+}
+@mixin sprites($extend, $left:0, $top:0) {
+    @extend %#{$extend};
+    background-position: $left $top;
+}

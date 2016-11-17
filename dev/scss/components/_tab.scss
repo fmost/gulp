@@ -1,0 +1,31 @@
+.ui-tab{
+    &-nav{
+        $c-color:$c-blue;
+        @extend %clearfix;
+        border-bottom: 1px solid $c-color;
+        li{
+            @extend %dis-inb;
+            @extend %fl;
+            margin-right: 3px;
+            a{
+                display: block;
+                padding: 8px 12px 8px 12px;
+                border: 1px solid $c-color;
+                border-bottom-width: 0;
+                color: #1d8acb;
+                text-decoration: none;
+                border-radius: 4px 4px 0 0;
+            }
+            &.active a,a:hover{
+                background: $c-color;
+                color: #fff; 
+            }
+        }        
+    }
+    &-con{
+        padding:10px;
+        .ui-tab-view{
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,191 @@
+$border-color:#e3e3e3;
+
+.ui-form{
+    legend{
+        width: 100%;
+        border: 0;
+        padding: 0;
+        padding-bottom: 5px;
+        padding-top: 10px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+
+
+
+input,button,select,textarea{
+    font-family: 'Microsoft YaHei';
+}
+%input-ani{
+    -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    &:focus{
+        border-color:#acd8fa;
+        -webkit-box-shadow:0 0 4px rgba(54,161,244,.5);
+        box-shadow:0 0 4px rgba(54,161,244,.5);
+    }
+    &:hover{
+        border: solid 1px #3bb4f2;
+    }      
+}
+%disabled{
+    border-color: $border-color;
+    background-color: #fafafa;
+    color: $c-gray;
+}
+//input
+.ui-input{
+    @extend %dis-inb;
+    vertical-align: top;    
+    $height:20px;
+    $p:6px;
+    height:$height;
+    line-height:$height;
+    padding:$p;
+    border: 1px solid $border-color;       
+    background-color: #fff;
+    font-size: 14px;
+    color: $c-gray-dark;
+    vertical-align: middle;
+    border-radius:3px;
+    @extend %input-ani;  
+    @at-root {
+        .phcolor{
+            color:#{$c-gray}!important;
+        }
+        .ie6 &{
+            position:relative;
+        }
+    }
+    &[type=text]:disabled{
+        @extend %disabled;
+    }
+    &-error{
+        $c-error:#f44336;
+        border-color:$c-error;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        -webkit-transition:none;
+                transition:none;
+        color: darken($c-error,10%);
+        &:focus,&:hover{
+            border-color:$c-error;
+            -webkit-box-shadow:none;
+            box-shadow:none;
+        }
+    }
+    &-success{
+        $c-success:#8ec73b;
+        border-color:$c-success;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        -webkit-transition:none;
+                transition:none;
+        color: darken($c-success,10%);
+        &:focus,&:hover{
+            border-color:$c-success;
+            -webkit-box-shadow:none;
+            box-shadow:none;
+        }
+    }
+}
+// textarea
+.ui-textarea{
+    border: 1px solid $border-color;       
+    background-color: #fff;
+    border-radius:3px;
+    @extend %input-ani;;  
+    $width:330px;
+    $height:160px;
+    width: $width;
+    height: $height;
+    resize:none;
+    padding:10px;
+    &:disabled{
+        @extend %disabled;
+    }
+}
+
+// select
+$ui-select-index:5;
+@mixin ui-select($height:32px){
+    @extend %ui-select;
+    height:$height;
+    line-height: $height;
+    .option-grp{
+        top: $height - 1px;
+    }
+}
+%ui-select{
+    @extend %dis-inb;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 3px 3px 0 0;
+    z-index:$ui-select-index;
+    $w:150px;
+    width: 150px;
+    .option,.selected-txt{
+        display: block;
+        padding: 0 20px 0 15px;
+        color: $c-gray;
+        &:hover{
+            background-color: #f5f5f5;
+            text-decoration: none;
+        }
+    }    
+    .option-grp{
+        position: absolute;
+        left: -1px;
+        display: none;
+        width: 100%;
+        border: 1px solid #e6e6e6;
+        border-top: 0 none;
+        background-color: #fff;
+        overflow: hidden
+    }
+    .i-select-arrow {
+        position: absolute;
+        top: 14px;
+        right: 8px;
+        @include arrow(#999,bottom,4px);
+        cursor: pointer;
+    }
+    @at-root{
+        .ui-select--expand{
+            .i-select-arrow{
+                @include arrow(#999,top,4px);
+                top: 9px;
+            }   
+        }
+    }    
+}
+.ui-select{
+    @include ui-select();
+    &:disabled{
+        @extend %disabled;
+    }
+}
+
+//checkbox radio
+.ui-checkbox,.ui-radio{
+    margin-right: 2px;
+    margin-top:-3px;
+    @extend %dis-inb;
+}
+
+// 验证提示
+.txt-red{
+    color:$c-red;
+    font-size: 16px;
+    font-weight: bold;
+}
+.error{
+    input{
+                
+    }
+}

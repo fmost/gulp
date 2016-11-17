@@ -1,0 +1,88 @@
+
+/*overlay*/
+html{
+    *background-image:url(about:blank);
+    *background-attachment:fixed;
+}
+.overlay{
+    position:fixed; 
+    z-index:500;
+    width:100%;
+    height:100%;
+    @include opacityColor(#000,.6);
+    top:0;
+    left:0;      
+    @at-root .ie8 &{
+        background: url(*);        
+    }
+    @at-root .ie7 &{
+        background: url(*);        
+    }
+    @at-root .ie6 &{
+        background: url(*); 
+        position:absolute; 
+        top:expression(eval(document.documentElement.scrollTop));       
+    } 
+}
+.layer-box{
+    display:inline-block;
+    $width:435px;
+    width: $width;      
+    margin-left:(-$width)/2;
+    position:absolute;      
+    z-index:505;
+    top:50%; 
+    left:50%;
+    background-color: #fff;
+    border-radius:10px;
+    &-hd{
+        $hd-height:56px;
+        height: $hd-height;
+        line-height: $hd-height;
+        padding-top: 6px;
+        border-bottom: 1px solid #e8e8e8;
+        position:relative;
+        .txt{
+            @extend %dis-inb;
+            font-size: 22px;
+            color: #ef7820;
+            margin-left: 33px;
+        }
+        .close{
+           @extend %dis-inb;
+            $size:33px;
+            width:$size;
+            height:$size;
+            line-height:$size * 5;
+            font-size: 0;
+            overflow:hidden;
+            position:absolute;
+            right:15px;
+            top:11px;
+            background: images('sev-spr.png') 0 -29px no-repeat;
+            &:hover{
+                background-position: -34px -29px;
+            }
+        }
+    }
+    &-bd{
+        font-size: 14px;
+        color: #666;
+        padding-left:33px;
+        padding-right:33px;
+        .p-txt,.txt-p{
+            strong{
+                font-weight: bold;
+            }
+        }
+        .txt-h2{
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            padding:15px 0 5px;
+        }
+    }
+}
+.hide{
+    display: none;
+}

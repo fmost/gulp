@@ -1,0 +1,195 @@
+
+// arrow for 4 directions
+@mixin arrow($color,$direction,$size){
+    $d : 'bottom' !default;
+    $size:4px !default;
+    @extend %dis-inb;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border:$size dashed transparent;
+    @if $direction == 'top' {
+        $d : 'bottom';        
+    }
+    @if $direction == "bottom" {
+        $d : "top";        
+    }
+    @if $direction == 'left' {
+        $d : 'right';
+    }
+    @if $direction == "right" {
+        $d : "left";
+    }
+    border-#{$d}-style:solid;
+    border-#{$d}-color:$color;
+}
+.arrow-blue-bottom{
+    @include arrow(#2c87cd,bottom,4px);
+
+}
+.arrow-white-bottom{
+    @include arrow(#fff,bottom,4px);
+}
+
+
+
+// drop-down
+@mixin drop-down($wide){    
+    @extend %dis-inb;
+    position:relative;    
+    &-menu{
+        width:$wide;
+        position: absolute;        
+        left:0;
+        z-index: 9;        
+        // display: none;
+        li{
+            a{
+                display: block;                
+                cursor: pointer; 
+            }
+        }
+    }       
+}
+.drop-down{
+    &-gray{
+        @include drop-down(80px);     
+        &-tit{
+            @extend %dis-inb;
+            $height:20px;
+            _height: $height;
+            _line-height: $height;
+            _padding-top: 3px;
+            _padding-bottom: 3px;
+            .arrow-blue{
+                @include arrow(#2c87cd,bottom,4px);
+            }
+        }
+        &-menu{
+            background-color: #fff;
+            border: 1px solid #d4d4d4;
+            text-align: left;
+            padding:2px 0;
+            top:25px;
+            box-shadow:1px 2px 6px 0px rgba(#929292,.28);
+            display: none;
+            li{
+                margin:0 2px;            
+                border-bottom: 1px dashed #eee;
+                a{
+                    padding-left: 11px;
+                    color:$c-gray;
+                    &:hover{
+                        background-color: #f2f2f2;
+                        color: $c-gray-dark;
+                        text-decoration: none;
+                    }
+                }
+            } 
+        }
+        &-hover{
+            .drop-down-gray{
+                &-tit{
+                    .arrow-blue{
+                        @include arrow(#2c87cd,top,4px);
+                        margin-top: -8px;
+                    }
+                }
+                &-menu{
+                    display: block;
+                }
+            }
+        }
+    }
+    &-blue-button{
+        @exend %dis-inb;
+        @include drop-down(75px);
+        cite{
+            font-style: normal;
+        }
+        &-menu{            
+            top:30px;
+            display:none;
+            li{
+                margin:1px 0 0; 
+                a{
+                    text-align: center;
+                    padding:0;
+                    border-radius: 3px;
+                    &:hover{
+                        background-color: #0080e2;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            } 
+        }
+        @at-root{
+            .hover{
+                .drop-down-blue-button-menu{
+                    display:block;
+                }
+            }
+        }
+    }
+    &-shadow{
+        @include drop-down(180px);
+        z-index: 9;
+        &-tit{
+            @extend %dis-inb;
+            font-size: 0;
+            padding:8px 21px 5px 8px!important;
+            border: 1px solid #fff;
+            border-bottom:0;
+            border-radius:3px 3px 0 0;
+            position: relative;
+            z-index: 10;
+            background-color: #fff;
+            .extend{
+                @extend %dis-inb;
+                width: 17px;
+                height: 33px;
+                overflow: hidden;
+                background: #f2f2f2;
+                text-align: center;
+                .drop-arrow{
+                    @extend %dis-inb;
+                    width: 0;
+                    height: 0;
+                    overflow: hidden;
+                    @include arrow(#666,bottom,4px);
+                    margin-top: 15px;
+                    cursor: pointer;
+                }
+            }            
+        }
+        &-menu{            
+            top:48px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            box-shadow:0 2px 7px rgba(0,0,0,.2);
+            border-radius:3px;
+            display: none;            
+        }
+        &-hover{
+            z-index: 10;
+            .drop-down-shadow{
+                &-tit{
+                    border-color: #dbdbdb;
+                    box-shadow:0 -2px 7px -2px rgba(0,0,0,.2);
+                    .extend{
+                        .drop-arrow{
+                            @include arrow(#666,top,4px);
+                            margin-top: 11px;
+                        }
+                    }
+                }
+                &-menu{            
+                    display: block;             
+                }                
+            }
+        }
+    }
+}
+
+

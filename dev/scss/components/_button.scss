@@ -1,0 +1,54 @@
+.ui-btn{  
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    border-radius: 3px;
+    $height:34px;
+    height: $height;
+    line-height: $height;
+    width: 80px;
+    font-size: 16px;
+    border:0 none;
+    cursor: pointer;
+    text-align: center;
+    $bgc:#008de7;
+    background: $bgc;
+    &:hover{
+        color:#fff;
+        background: darken($bgc,5%);
+        text-decoration: none;
+    }
+    &:disabled,&-disabled{       
+        color: #666;
+        $bgc:#ddd;
+        background:$bgc;
+        cursor: default;
+        &:hover{
+            color: #666;
+            background-color:$bgc;
+            text-decoration: none;
+        }
+    }
+    &-orange{        
+        $bgc:#f60;
+        background-color:$bgc;
+        &:hover{
+            background-color:darken($bgc,5%);
+        }
+    }
+    &-l{        
+        $w:200px;
+        $h:40px;
+        width: $w;
+        height: $h;
+        line-height: $h;
+    }
+    &-s{        
+        $w:60px;
+        $h:24px;
+        width: $w;
+        height: $h;
+        line-height: $h;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,66 @@
+@mixin ui-text-list($liheight,$fontsize,$txtcolor){
+    @extend %clearfix;
+    li{
+        height: $liheight;
+        line-height: $liheight;  
+        text-align: right; 
+        color: $txtcolor;
+        .text-con{
+            @extend %dis-inb;            
+            height: $liheight;
+            line-height: $liheight;  
+            font-size: $fontsize;
+            width: 99%;
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: keep-all;
+            float: left;
+            @at-root{
+                .ie6 &{
+                    $h:18px;
+                    height: $h;
+                    line-height: $h;
+                    padding-top: ($liheight - $h)/2;
+                }
+            }
+            .dot{
+                $size:3px;
+                $dot-color:#ccc;
+                @extend %dis-inb;
+                width: $size;
+                height: $size;
+                overflow: hidden;
+                background: $dot-color;
+                *margin-right: 4px;
+            }
+            a{                
+                color: $txtcolor;
+                &:hover{
+                    color: $c-hover;
+                    text-decoration: underline;
+                }
+            }
+        }        
+    }
+    &-date{
+        li{
+            .text-con{
+                @extend %fl;
+                width: 80%;
+            }
+            .text-date{
+                font-size: 12px;
+                color: $c-gray-light;
+            }
+
+        }
+    }
+}
+.ui-text-list{
+    $liheight:30px;
+    $fontsize:14px;
+    $txtcolor:$c-gray;
+    @include ui-text-list($liheight,$fontsize,$txtcolor);
+}

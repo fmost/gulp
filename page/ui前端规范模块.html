@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="ie6"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if gte IE 9]><html class="ie9"><![endif]-->
+<html>
+<head>
+    <meta charset="gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>ui前端规范模块</title>
+    <meta content="描述" name="Description" />
+    <meta content="关键词" name="Keywords" />
+    <link rel="stylesheet" href="../dist/css/global.css">
+    <style>
+        h2{
+            font-size: 30px;
+            margin-top: 40px;
+        }
+        .h3{
+            padding-top: 15px;
+        }
+        .guid-row{
+            padding-top: 8px;
+        }
+        .summary{
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="inner">header</div>
+        </div>
+        <div class="main">
+            <div class="inner">
+                <!-- panal -->
+                <h2>面板</h2>                
+                <div class="panal">
+                    <div class="panal-hd">
+                        <h3 class="t-txt">标题</h3>
+                        <span class="extend"><a href="javascript:;">更多>></a></span>
+                    </div>
+                    <div class="panal-bd">
+                        <p>面板内容</p>                            
+                    </div>
+                </div>
+                <!-- panal end -->
+
+                <!-- form -->
+                <h2>表单</h2>
+                <form action="" class="ui-form">
+                    <fieldset>
+                        <legend>form</legend>
+                        <!-- input -->
+                        <input type="text" placeholder="Text input" class="ui-input">
+                        <!-- password -->
+                        <input type="password" placeholder="Password input" class="ui-input">
+                        <!-- button -->
+                        <input type="button" class="ui-btn" value="确定">
+                        <a href="javascript:;" class="ui-btn">确定</a>
+                        <!-- checkbox -->
+                        <label class="" for="checkbox-1"><input type="checkbox" class="ui-checkbox" id="checkbox-1">Checkbox</label>
+                        <!-- radio -->
+                        <label for="radio-1">
+                            <input type="radio" class="ui-radio" id="radio-1">Radio
+                        </label>
+                        <!-- select -->
+                        <div class="ui-select">
+                            <div class="selected">
+                                <a href="javascript:;" class="selected-txt">全部</a>
+                                <i class="icon i-select-arrow"></i>
+                            </div>
+                            <div class="option-grp">
+                                <a href="javascript:;" class="option">选项一</a>
+                                <a href="javascript:;" class="option">选项二</a>
+                                <a href="javascript:;" class="option">选项三</a>
+                                <a href="javascript:;" class="option">选项四</a>
+                            </div>
+                        </div>
+                        <!-- 原生select -->
+                        <select class="ui-select">
+                            <option>select</option>
+                            <option>Option 02</option>
+                        </select>
+                        <div class="mt10">
+                            <textarea class="ui-textarea" name="" id="" cols="30" rows="10">内容</textarea>
+                        </div>                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Disabled</legend>
+                        <!-- input -->
+                        <input type="text" placeholder="Text input" disabled class="ui-input">
+                        <!-- button -->
+                        <input type="button" class="ui-btn ui-btn-disabled" value="确定">
+                        <a href="javascript:;" class="ui-btn ui-btn-disabled">确定</a>
+                        <!-- select -->
+                        <select disabled="" class="ui-select">
+                            <option>select</option>
+                            <option>Option 02</option>
+                        </select>
+                        <!-- textarea -->
+                        <div class="mt10">
+                            <textarea disabled="" class="ui-textarea" name="" id="" cols="30" rows="10">内容</textarea>
+                        </div>                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Validation states</legend>
+                        <input type="text" placeholder="Text input" class="ui-input ui-input-success" value="正确">
+                        <input type="text" placeholder="Text input" class="ui-input ui-input-error" value="输错了">
+                    </fieldset>
+                </form>
+                <!-- button -->
+                <h2>按钮</h2>
+                <div class="guid-row">
+                    <h3 class="h3">默认（主要）</h3>
+                    <div class="guid-row">
+                        <a class="ui-btn" href="">link</a>
+                        <button class="ui-btn" type="button">button</button>
+                        <input type="button" value="button" class="ui-btn">
+                        <button class="ui-btn ui-btn-disabled" type="button" disabled>button</button>                        
+                    </div>
+                    <h3 class="h3">辅助颜色</h3>
+                    <div class="guid-row">
+                        <a class="ui-btn ui-btn-orange" href="">link</a>
+                        <button class="ui-btn ui-btn-orange" type="button">button</button>
+                        <input type="button" value="button" class="ui-btn ui-btn-orange">
+                    </div>
+                    <h3 class="h3">尺寸</h3>
+                    <div class="guid-row">
+                        <a class="ui-btn ui-btn-orange ui-btn-l" href="">link</a>
+                        <button class="ui-btn ui-btn-l" type="button">button</button>
+                        <input type="button" value="button" class="ui-btn ui-btn-l">
+                        <button class="ui-btn ui-btn-l ui-btn-disabled" type="button" disabled>button</button> 
+                    </div>
+                    <div class="guid-row">
+                        <a class="ui-btn ui-btn-orange ui-btn-s" href="">link</a> 
+                        <button class="ui-btn ui-btn-s" type="button">button</button>
+                        <input type="button" value="button" class="ui-btn ui-btn-s">
+                        <button class="ui-btn ui-btn-s ui-btn-disabled" type="button" disabled>button</button> 
+                    </div>
+                </div>
+                <!-- tab切换 -->
+                <h2>tab切换</h2>
+                <div class="guid-row">
+                    <div class="ui-tab">
+                        <ul class="ui-tab-nav">
+                            <li class="active">
+                                <a href="javascript:;" target="_self">最火主播</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" target="_self">草根大神</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" target="_self">职业选手</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" target="_self">美女解说</a>
+                            </li>
+                        </ul>
+                        <div class="ui-tab-con">
+                            <div class="ui-tab-view" style="display:block;">content1</div>
+                            <div class="ui-tab-view">content2</div>
+                            <div class="ui-tab-view">content3</div>
+                            <div class="ui-tab-view">content4</div>
+                        </div>                        
+                    </div>
+                </div>
+                <!-- 文字列表 -->
+                <h2>文字列表</h2>
+                <p class="summary">普通：.ui-text-list &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 带日期：.ui-text-list-date</p>
+                <div class="ui-grid">
+                    <div class="ui-width-1-2 fl">
+                        <ul class="ui-text-list ui-text-list-date">
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e8rtwretwretwser4</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>                               
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">国防板块成突围排头兵 鹏华国防B目前杠杆最大</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">坚守者的红利 鹏华弘锐混合C逆势大涨71.79%</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">市场巨幅震荡分级A凸显避险价值</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e84</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">市场巨幅震荡分级A凸显避险价值</a>
+                                </span>
+                                <span class="text-date">
+                                    2015-07-20
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ui-width-1-2 fr">
+                        <ul class="ui-text-list">
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e84</a>
+                                </span>
+                            </li>                               
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">国防板块成突围排头兵 鹏华国防B目前杠杆最大</a>
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">坚守者的红利 鹏华弘锐混合C逆势大涨71.79%</a>
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">市场巨幅震荡分级A凸显避险价值</a>
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e84</a>
+                                </span>
+                            </li>
+                            <li>                                    
+                                <span class="text-con">
+                                    <i class="dot"></i>
+                                    <a href="">市场巨幅震荡分级A凸显避险价值</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- icon图标 -->
+                <h2>icon图标</h2>
+                <div class="ui-grid">
+                    <ul class="medal-list-s bubble-widget">
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-1  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-2  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-3  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-4  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-5  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-6  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-bbs-7  bubble-tip" tiptext="<strong>传奇霸业</strong>鞢夺回朝左搜房卡"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-1  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-2  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-3  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-4  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-5  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-6  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-7  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-8  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-9  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-10  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-11 bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-12  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-13  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-14  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-15  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-16  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-tit">
+                                <span class="icon i-medal i-medal-g-17  bubble-tip" tiptext="论坛购买有效期 365 天"></span>
+                            </div>
+                        </li>
+                        <li class="item drop-down-shadow">
+                            <div class="item-tit drop-down-shadow-tit">
+                                <span class="icon i-medal i-medal-xz-1 bubble-tip" tiptext="传奇霸业玩家专属勋章，玩家可以在论坛购买有效期 365 天"></span>
+                                <span class="extend"><i class="drop-arrow"></i></span>  
+                            </div>          
+                            <div class="drop-down-shadow-menu">
+                                <div class="icon-layer-con">
+                                    <span class="icon i-medal i-medal-xz-1"></span>
+                                    <span class="icon i-medal i-medal-xz-2"></span>
+                                    <span class="icon i-medal i-medal-xz-3"></span>
+                                    <span class="icon i-medal i-medal-xz-4"></span>
+                                    <span class="icon i-medal i-medal-xz-5"></span>
+                                    <span class="icon i-medal i-medal-xz-6"></span>
+                                    <span class="icon i-medal i-medal-xz-7"></span>
+                                    <span class="icon i-medal i-medal-xz-8"></span>
+                                    <span class="icon i-medal i-medal-xz-9"></span>
+                                    <span class="icon i-medal i-medal-xz-10"></span>
+                                    <span class="icon i-medal i-medal-xz-11"></span>
+                                    <span class="icon i-medal i-medal-xz-12"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item drop-down-shadow">
+                            <div class="item-tit drop-down-shadow-tit">
+                                <span class="icon i-medal i-medal-sx-1 bubble-tip" tiptext="传奇霸业玩家专属勋章，玩家可以在论坛购买有效期 365 天"></span>
+                                <span class="extend"><i class="drop-arrow"></i></span>  
+                            </div>          
+                            <div class="drop-down-shadow-menu">
+                                <div class="icon-layer-con">
+                                    <span class="icon i-medal i-medal-sx-1"></span>
+                                    <span class="icon i-medal i-medal-sx-2"></span>
+                                    <span class="icon i-medal i-medal-sx-3"></span>
+                                    <span class="icon i-medal i-medal-sx-4"></span>
+                                    <span class="icon i-medal i-medal-sx-5"></span>
+                                    <span class="icon i-medal i-medal-sx-6"></span>
+                                    <span class="icon i-medal i-medal-sx-7"></span>
+                                    <span class="icon i-medal i-medal-sx-8"></span>
+                                    <span class="icon i-medal i-medal-sx-9"></span>
+                                    <span class="icon i-medal i-medal-sx-10"></span>
+                                    <span class="icon i-medal i-medal-sx-11"></span>
+                                    <span class="icon i-medal i-medal-sx-12"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 滚动 -->
+                <h2>文字滚动</h2>
+                <p class="summary">普通：.ui-marquee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;带图标：.ui-marquee-icon</p>
+                <div class="ui-grid">
+                    <div class="ui-marquee ui-marquee-icon ui-width-1-2 fl" id="J_marquee">
+                        <i class="icon i-notice"></i>
+                        <ul class="ui-text-list" style="top: 0px;">
+                            <li>                                    
+                                <span class="text-con">
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e8rtwretwretwser4</a>
+                                </span>
+                            </li> 
+                            <li>                                    
+                                <span class="text-con">
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e8rtwretwretwser4</a>
+                                </span>
+                            </li> 
+                            <li>                                    
+                                <span class="text-con">
+                                    <a href="">公募基金坚信资本市场能够健康稳定发展—25家公募46546asd1f32ds4f6e8rtwretwretwser4</a>
+                                </span>
+                            </li>     
+                        </ul>                 
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!--#include virtual = 'include/footer.html'-->      
+    </div>
+<!-- javascript -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src='../dist/js/main.min.js'></script>
+<script>
+    // tab切换   
+    $("[class^='ui-tab'] ul").tabPlug({
+        cntSelect: '.ui-tab-con',
+        menuChildSel: 'li',
+        onStyle: 'active',
+        cntChildSel: '.ui-tab-view',
+        eventName: 'click'
+    });
+
+    $("#J_marquee ul").rollGallery({
+        direction: "top",
+        speed: 3000
+    });
+</script>
+</body>
+</html>

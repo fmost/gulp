@@ -1,0 +1,61 @@
+// project: ui前端规范
+// date:    2016-06-15
+// author:  fengjj
+
+//libs
+@import 'libs/mixin-css3',
+        'libs/mixin-reset';
+// reset
+@import 'components/setting';
+// reset
+@include reset($color, $bodyBgColor, $font, $c-link, $c-hover);
+//components
+@import 'components/extend',
+        'components/common',
+        'components/icon',
+        'components/arrow',
+        'components/button',
+        'components/form',
+        'components/tab',
+        'components/ui-text-list',
+        'components/ui-marquee',
+        'components/drop-down';
+// modules
+@import 'modules/medal-list',
+        'modules/footer';
+       
+
+// pageModules
+// @import 'components/';
+        
+.panal{
+    border:1px solid #ccc;
+    &-hd{
+        $height:30px;
+        height: $height;
+        line-height: $height;
+        background-color: #eee;
+        position: relative;
+        .t-txt{
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        .extend{
+            position:absolute;
+            right:15px;
+            top:0;
+        }
+    }
+    &-bd{
+        padding: 15px;
+    }
+}
+.ui-grid{
+    @extend %clearfix;
+    .ui-width-1-2{
+        width: 49%;
+    }
+}
+
+@import  'components/overlay';
